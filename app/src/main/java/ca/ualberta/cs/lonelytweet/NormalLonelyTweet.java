@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class NormalLonelyTweet extends LonelyTweet {
 
-	public NormalLonelyTweet() {
-	}
+	//Removed no param constructor, tweet must have a message
 
 	public NormalLonelyTweet(String text) {
 		this.tweetDate = new Date();

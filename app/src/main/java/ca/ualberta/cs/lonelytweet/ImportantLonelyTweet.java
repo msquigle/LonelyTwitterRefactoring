@@ -6,8 +6,7 @@ import java.util.Date;
 
 public class ImportantLonelyTweet extends LonelyTweet {
 
-	public ImportantLonelyTweet() {
-	}
+	//Removed no param constructor, tweet must have a message
 
 	public ImportantLonelyTweet(String text) {
 		this.tweetDate = new Date();

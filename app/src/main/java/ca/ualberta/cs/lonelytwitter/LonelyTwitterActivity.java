@@ -43,11 +43,11 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
-	public void save(View v) {
+	//Removed View v as parameter, unnecessary class already knows view
+	public void save() {
 		String text = bodyText.getText().toString();
 
 		LonelyTweet tweet;
-
 
 
 		//TODO: use different sub-classes (Normal or Important) based on usage of "*" in the text.
@@ -67,7 +67,7 @@ public class LonelyTwitterActivity extends Activity {
 
 	private LonelyTweet newImportantOrNormalTweet(String text) {
 		LonelyTweet tweet;
-		if(text.contains("*")) {
+		if (text.contains("*")) {
 			tweet = new ImportantLonelyTweet(text);
 		} else {
 			tweet = new NormalLonelyTweet(text);
@@ -75,17 +75,12 @@ public class LonelyTwitterActivity extends Activity {
 		return tweet;
 	}
 
-	public void clear(View v) {
+	//Removed View v as parameter, unnecessary class already knows view
+	public void clear() {
 		tweets.clear();
 		adapter.notifyDataSetChanged();
 		tweetsProvider.saveTweets(tweets);
 	}
-
-	public List<LonelyTweet> getTweets() {
-		return tweets;
-	}
-
-	public void setTweets(List<LonelyTweet> tweets) {
-		this.tweets = tweets;
-	}
 }
+
+	//Activity shouldn't be in charge of getters/setters for other class, removed both
